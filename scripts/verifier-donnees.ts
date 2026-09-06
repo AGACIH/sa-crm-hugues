@@ -79,14 +79,34 @@ for (const t of taches) {
   verifier(!Number.isNaN(Date.parse(t.echeance)), `tâche ${t.id} : échéance illisible`);
 }
 
-// 6. Aucun texte bouche-trou
+// 6. Chaque activité pointe vers un contact réel
+for (const a of activites) {
+  verifier(idContacts.has(a.contactId), `activité ${a.id} → contact inconnu « ${a.contactId} »`);
+  verifier(!Number.isNaN(Date.parse(a.date)), `activité ${a.id} : date illisible`);
+}
+
+// 7. Une activité qui annonce un changement d'étape doit citer l'étape
+//    réellement enregistrée sur l'opportunité concernée.
+const etapesConnues = ['Nouveau', 'Qualifié', 'Proposition', 'Négociation', 'Gagné', 'Perdu'];
+for (const a of activites.filter((x) => x.type === 'etape')) {
+  const opp = opportunites.find((o) => a.cible.includes(o.intitule));
+  if (!opp) continue;
+  const etapeCitee = etapesConnues.find((e) => a.cible.endsWith(e));
+  if (!etapeCitee) continue;
+  verifier(
+    etapeCitee === opp.etape,
+    `activité ${a.id} annonce « ${etapeCitee} » alors que l'opportunité ${opp.id} est à l'étape « ${opp.etape} »`,
+  );
+}
+
+// 8. Aucun texte bouche-trou
 const interdits = ['lorem', 'ipsum', 'contact 1', 'entreprise 1', 'à compléter', 'todo'];
 const corpus = JSON.stringify({ entreprises, contacts, opportunites, taches, activites }).toLowerCase();
 for (const mot of interdits) {
   verifier(!corpus.includes(mot), `texte bouche-trou détecté : « ${mot} »`);
 }
 
-// 7. Restitution
+// 9. Restitution
 if (erreurs.length > 0) {
   console.error('\n  Données incohérentes :\n');
   for (const e of erreurs) console.error('   - ' + e);

@@ -67,4 +67,6 @@ export interface Activite {
   cible: string;
   contexte: string;
   date: string;
+  /** Contact concerné par l'activité — alimente son historique sur sa fiche. */
+  contactId: string;
 }

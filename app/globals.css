@@ -766,3 +766,263 @@ a {
     display: none;
   }
 }
+
+/* --- Filtres de la liste Contacts --------------------------- */
+
+.filtres {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--sa-gap);
+  flex-wrap: wrap;
+  margin-bottom: var(--sa-space-5);
+}
+
+.recherche-large {
+  flex: 1 1 260px;
+  max-width: none;
+}
+
+.filtre {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sa-space-1);
+}
+
+.filtre-libelle {
+  font-size: var(--sa-text-2xs);
+  letter-spacing: var(--sa-tracking-wide);
+  text-transform: uppercase;
+  font-weight: var(--sa-weight-bold);
+  color: var(--sa-text-muted);
+}
+
+.filtre-champ {
+  font-family: var(--sa-font);
+  font-size: var(--sa-text-md);
+  font-weight: var(--sa-weight-semi);
+  color: var(--sa-text);
+  background: var(--sa-surface);
+  border: 1px solid var(--sa-border);
+  border-radius: var(--sa-radius);
+  padding: var(--sa-space-2) var(--sa-space-3);
+}
+
+.filtres-decompte {
+  margin-left: auto;
+  font-size: var(--sa-text-sm);
+  color: var(--sa-text-muted);
+  padding-bottom: var(--sa-space-2);
+}
+
+.filtres-rappel {
+  margin: var(--sa-space-4) 0 0;
+  font-size: var(--sa-text-sm);
+  color: var(--sa-text-muted);
+}
+
+.lien-bouton {
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: var(--sa-font);
+  font-size: var(--sa-text-sm);
+  font-weight: var(--sa-weight-bold);
+  color: var(--sa-primary);
+  cursor: pointer;
+}
+
+/* --- Tableau ------------------------------------------------ */
+
+.tableau-cadre {
+  overflow-x: auto;
+}
+
+.tableau {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--sa-text-base);
+}
+
+.tableau th {
+  text-align: left;
+  font-size: var(--sa-text-2xs);
+  letter-spacing: var(--sa-tracking-wide);
+  text-transform: uppercase;
+  font-weight: var(--sa-weight-bold);
+  color: var(--sa-text-muted);
+  padding: var(--sa-space-2) var(--sa-space-3);
+  border-bottom: 1px solid var(--sa-border);
+  white-space: nowrap;
+}
+
+.tableau td {
+  padding: var(--sa-space-3);
+  border-bottom: 1px solid var(--sa-border);
+  vertical-align: middle;
+}
+
+.tableau-ligne:hover {
+  background: var(--sa-primary-soft);
+}
+
+.tableau-lien {
+  font-weight: var(--sa-weight-bold);
+  color: var(--sa-text);
+}
+
+.tableau-lien::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.tableau-ligne td:first-child {
+  position: relative;
+}
+
+.cellule-discrete {
+  color: var(--sa-text-2);
+  white-space: nowrap;
+}
+
+/* --- État vide ---------------------------------------------- */
+
+.etat-vide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sa-space-3);
+  padding: var(--sa-space-6);
+  text-align: center;
+}
+
+.etat-vide-icone {
+  font-size: var(--sa-text-2xl);
+  color: var(--sa-text-faint);
+}
+
+.etat-vide-titre {
+  margin: 0;
+  font-size: var(--sa-text-lg);
+  font-weight: var(--sa-weight-bold);
+}
+
+.etat-vide-texte {
+  margin: 0;
+  font-size: var(--sa-text-base);
+  color: var(--sa-text-muted);
+}
+
+/* --- Fiche contact ------------------------------------------ */
+
+.fil-ariane {
+  margin: 0;
+  font-size: var(--sa-text-sm);
+}
+
+.fil-ariane-lien {
+  color: var(--sa-primary);
+  font-weight: var(--sa-weight-semi);
+}
+
+.grille-fiche {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--sa-gap-card);
+  align-items: start;
+}
+
+.colonne-fiche {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sa-gap-card);
+  min-width: 0;
+}
+
+.fiche-infos {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sa-space-4);
+}
+
+.fiche-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sa-space-1);
+}
+
+.fiche-info dt {
+  font-size: var(--sa-text-2xs);
+  letter-spacing: var(--sa-tracking-wide);
+  text-transform: uppercase;
+  font-weight: var(--sa-weight-bold);
+  color: var(--sa-text-muted);
+}
+
+.fiche-info dd {
+  margin: 0;
+  font-size: var(--sa-text-base);
+  font-weight: var(--sa-weight-semi);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sa-space-1);
+}
+
+.fiche-info-detail {
+  font-size: var(--sa-text-sm);
+  font-weight: var(--sa-weight-medium);
+  color: var(--sa-text-muted);
+}
+
+/* --- Listes simples (opportunités, tâches) ------------------ */
+
+.liste-simple {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ligne-simple {
+  display: flex;
+  align-items: center;
+  gap: var(--sa-gap);
+  padding: var(--sa-space-3) 0;
+}
+
+.ligne-simple + .ligne-simple {
+  border-top: 1px solid var(--sa-border);
+}
+
+.ligne-simple-titre {
+  font-size: var(--sa-text-base);
+  font-weight: var(--sa-weight-bold);
+}
+
+.ligne-simple-meta {
+  font-size: var(--sa-text-sm);
+  color: var(--sa-text-muted);
+}
+
+.ligne-simple-valeur {
+  margin-left: auto;
+  font-size: var(--sa-text-base);
+  font-weight: var(--sa-weight-black);
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .grille-fiche {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .filtres-decompte {
+    margin-left: 0;
+  }
+
+  .filtre {
+    flex: 1 1 140px;
+  }
+}

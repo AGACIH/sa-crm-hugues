@@ -1,0 +1,25 @@
+import type { Contact } from './types.ts';
+import { jour } from './dates.ts';
+
+export const contacts: Contact[] = [
+  { id: 'c1',  prenom: 'Camille', nom: 'Fournier', entrepriseId: 'e1',  fonction: 'Directrice des opérations', email: 'camille.fournier@mercure-assurances.fr', telephone: '04 72 18 44 02', statut: 'Client',   derniereActivite: jour(-1, 11, 24) },
+  { id: 'c2',  prenom: 'Hugo',    nom: 'Lambert',  entrepriseId: 'e7',  fonction: 'Responsable achats',        email: 'h.lambert@brassac-logistique.fr',        telephone: '05 61 27 90 15', statut: 'Prospect', derniereActivite: jour(-2, 15, 40) },
+  { id: 'c3',  prenom: 'Paul',    nom: 'Rousseau', entrepriseId: 'e2',  fonction: 'Directeur technique',       email: 'p.rousseau@groupe-vallier.fr',           telephone: '05 56 33 71 88', statut: 'Prospect', derniereActivite: jour(-4, 10, 5) },
+  { id: 'c4',  prenom: 'Elsa',    nom: 'Vidal',    entrepriseId: 'e1',  fonction: 'Responsable formation',     email: 'elsa.vidal@mercure-assurances.fr',       telephone: '04 72 18 44 17', statut: 'Client',   derniereActivite: jour(-1, 11, 48) },
+  { id: 'c5',  prenom: 'Théo',    nom: 'Girard',   entrepriseId: 'e8',  fonction: 'Chef de projet',            email: 't.girard@novaterre-agro.fr',             telephone: '02 99 41 60 23', statut: 'Lead',     derniereActivite: jour(-6, 9, 30) },
+  { id: 'c6',  prenom: 'Sofia',   nom: 'Neri',     entrepriseId: 'e4',  fonction: 'Directrice générale',       email: 's.neri@vela-sante.fr',                   telephone: '04 67 55 12 09', statut: 'Lead',     derniereActivite: jour(-3, 16, 10) },
+  { id: 'c7',  prenom: 'Julien',  nom: 'Marchand', entrepriseId: 'e2',  fonction: 'Responsable RH',            email: 'j.marchand@groupe-vallier.fr',           telephone: '05 56 33 71 45', statut: 'Client',   derniereActivite: jour(-1, 10, 2) },
+  { id: 'c8',  prenom: 'Nadia',   nom: 'Cherif',   entrepriseId: 'e3',  fonction: 'Directrice commerciale',    email: 'n.cherif@helio-energies.fr',             telephone: '02 40 89 33 71', statut: 'Prospect', derniereActivite: jour(-2, 9, 15) },
+  { id: 'c9',  prenom: 'Léa',     nom: 'Bonnet',   entrepriseId: 'e5',  fonction: 'Directrice artistique',     email: 'lea.bonnet@kanto-studio.fr',             telephone: '01 44 76 20 88', statut: 'Prospect', derniereActivite: jour(-5, 14, 22) },
+  { id: 'c10', prenom: 'Marta',   nom: 'Ruiz',     entrepriseId: 'e6',  fonction: 'Responsable e-commerce',    email: 'm.ruiz@atelier-nomade.fr',               telephone: '03 20 55 47 61', statut: 'Client',   derniereActivite: jour(-1, 10, 2) },
+  { id: 'c11', prenom: 'Antoine', nom: 'Delcourt', entrepriseId: 'e9',  fonction: 'Directeur pédagogique',     email: 'a.delcourt@lumen-formation.fr',          telephone: '03 88 62 14 30', statut: 'Client',   derniereActivite: jour(-3, 11, 5) },
+  { id: 'c12', prenom: 'Sarah',   nom: 'Benali',   entrepriseId: 'e10', fonction: 'Responsable marketing',     email: 's.benali@cap-horizon.fr',                telephone: '04 91 30 78 52', statut: 'Prospect', derniereActivite: jour(-7, 15, 0) },
+  { id: 'c13', prenom: 'Vincent', nom: 'Payet',    entrepriseId: 'e3',  fonction: 'Ingénieur avant-vente',     email: 'v.payet@helio-energies.fr',              telephone: '02 40 89 33 19', statut: 'Lead',     derniereActivite: jour(-8, 10, 45) },
+  { id: 'c14', prenom: 'Claire',  nom: 'Mercier',  entrepriseId: 'e8',  fonction: 'Directrice qualité',        email: 'c.mercier@novaterre-agro.fr',            telephone: '02 99 41 60 07', statut: 'Client',   derniereActivite: jour(-4, 17, 30) },
+  { id: 'c15', prenom: 'Karim',   nom: 'Haddad',   entrepriseId: 'e7',  fonction: "Directeur d'exploitation",  email: 'k.haddad@brassac-logistique.fr',         telephone: '05 61 27 90 44', statut: 'Client',   derniereActivite: jour(-2, 8, 50) },
+  { id: 'c16', prenom: 'Émilie',  nom: 'Roux',     entrepriseId: 'e4',  fonction: 'Responsable achats',        email: 'e.roux@vela-sante.fr',                   telephone: '04 67 55 12 41', statut: 'Prospect', derniereActivite: jour(-9, 13, 15) },
+  { id: 'c17', prenom: 'Thomas',  nom: 'Lefèvre',  entrepriseId: 'e5',  fonction: 'Gérant',                    email: 't.lefevre@kanto-studio.fr',              telephone: '01 44 76 20 12', statut: 'Client',   derniereActivite: jour(-1, 15, 4) },
+  { id: 'c18', prenom: 'Awa',     nom: 'Diallo',   entrepriseId: 'e6',  fonction: 'Responsable logistique',    email: 'a.diallo@atelier-nomade.fr',             telephone: '03 20 55 47 09', statut: 'Lead',     derniereActivite: jour(-1, 17, 32) },
+  { id: 'c19', prenom: 'Pierre',  nom: 'Sanchez',  entrepriseId: 'e9',  fonction: 'Responsable commercial',    email: 'p.sanchez@lumen-formation.fr',           telephone: '03 88 62 14 77', statut: 'Inactif',  derniereActivite: jour(-46, 9, 0) },
+  { id: 'c20', prenom: 'Inès',    nom: 'Moreau',   entrepriseId: 'e10', fonction: 'Directrice générale',       email: 'i.moreau@cap-horizon.fr',                telephone: '04 91 30 78 04', statut: 'Client',   derniereActivite: jour(-5, 11, 20) },
+];
